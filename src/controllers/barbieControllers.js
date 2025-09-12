@@ -52,8 +52,8 @@ const deleteBarbie = (req,res) =>{
             message: `Pesonagem com id ${id} não existe`
         })
     }
-    const barbieFiltrados = barbies.filter(barbie => barbie.id !== id)
-    barbie.splice(0, barbies.length, ...barbieFiltrados)
+    const barbieFiltrados = barbies.filter(barbies => barbies.id !== id)
+    barbies.splice(0, barbies.length, ...barbieFiltrados)
     return res.status(200).json({
             sucess:true,
             message: `O personagem ${id} foi removido com sucesso`
