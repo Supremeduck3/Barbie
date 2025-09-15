@@ -11,6 +11,13 @@ const getBarbieByid = (req,res)=>{
     let id = req.params.id;
     id = parseInt(id)
     const barbie = barbies.find(b => b.id === id)
+
+    if (!barbie){
+        res.status(404).json({
+            sucess:false,
+            message:"Não existe barbie com esse id"
+        })
+    }
     res.status(200).json ({
         total: barbie.length,
         barbie:barbie
